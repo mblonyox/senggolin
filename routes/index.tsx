@@ -1,6 +1,11 @@
-export default function Home() {
+import { PageProps } from "$fresh/server.ts";
+import SeoTags from "@/components/seo_tags.tsx";
+import { META_DESCRIPTION } from "@/utils/env.ts";
+
+export default function Home({ url }: PageProps) {
   return (
     <>
+      <SeoTags url={url} />
       <div class="w-full max-w-screen-md mx-auto py-16">
         <img
           src="/logo.webp"
@@ -8,8 +13,7 @@ export default function Home() {
           alt="senggol.in logo"
         />
         <p class="my-8 w-1/2 mx-auto text-center">
-          Senggol.in adalah aplikasi untuk membuat halaman sederhana berisi
-          daftar tautan dengan nama alamat <em>URL</em> yang unik.
+          {META_DESCRIPTION}
         </p>
       </div>
     </>
