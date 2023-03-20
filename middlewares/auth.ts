@@ -19,7 +19,6 @@ export function memberGuard(
     { user?: User }
   >,
 ) {
-  console.log({ ctx });
   if (ctx.state.user?.role !== "authenticated") {
     return new Response("Unauthorized access.", {
       status: 401,
