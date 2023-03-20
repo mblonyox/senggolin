@@ -18,7 +18,8 @@ export async function setSupabaseClient(
     supabaseUrl,
     supabaseKey,
     getCookie(name) {
-      return decodeURIComponent(requestCookies[name]);
+      const cookie = requestCookies[name];
+      return cookie && decodeURIComponent(cookie);
     },
     setCookie(name, value, options) {
       responseCookies.push({

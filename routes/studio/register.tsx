@@ -1,5 +1,5 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { SupabaseClient } from "@supabase/supabase-js";
+import { SupabaseClient, User } from "@supabase/supabase-js";
 import MainLayout from "@/components/main_layout.tsx";
 import SeoTags from "@/components/seo_tags.tsx";
 
@@ -14,11 +14,10 @@ type Data = {
 
 export const handler: Handlers<
   Data,
-  { supabaseClient?: SupabaseClient }
+  { supabaseClient?: SupabaseClient; user?: User }
 > = {
-  GET: async (req, ctx) => {
-    const userResponse = await ctx.state.supabaseClient?.auth.getUser();
-    if (userResponse?.data.user) {
+  GET: (req, ctx) => {
+    if (ctx.state.user) {
       return Response.redirect(new URL("member", req.url), 302);
     }
     return ctx.render({
