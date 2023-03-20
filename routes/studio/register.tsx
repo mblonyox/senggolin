@@ -35,39 +35,27 @@ export const handler: Handlers<
     const password = formData.get("password")?.toString() ?? "";
     const confirmPassword = formData.get("confirmPassword")?.toString() ?? "";
     const data: Data = { name, email, password, confirmPassword };
-    if (password !== confirmPassword) {
-      const renderred = await ctx.render({
-        error: "Confirmation Password is not matched.",
-        ...data,
-      });
-      return new Response(renderred.body, {
-        headers: renderred.headers,
-        status: 400,
-      });
-    }
-    const authResponse = await ctx.state.supabaseClient?.auth.signUp({
-      email,
-      password,
-      options: {
-        data: {
-          name,
+    if (password === confirmPassword) {
+      const authResponse = await ctx.state.supabaseClient?.auth.signUp({
+        email,
+        password,
+        options: {
+          data: {
+            name,
+          },
         },
-      },
-    });
-    if (authResponse?.data.user) {
-      return ctx.render({
-        ...data,
-        confirmation_sent_at: authResponse.data.user.confirmation_sent_at,
       });
+      if (authResponse?.data.user) {
+        return ctx.render({
+          ...data,
+          confirmation_sent_at: authResponse.data.user.confirmation_sent_at,
+        });
+      }
+      data.error = authResponse?.error?.message;
+    } else {
+      data.error = "Confirmation Password is not matched.";
     }
-    const error = authResponse?.error?.message;
-    const renderred = await ctx.render({
-      name,
-      email,
-      password,
-      confirmPassword,
-      error,
-    });
+    const renderred = await ctx.render(data);
     return new Response(renderred.body, {
       headers: renderred.headers,
       status: 400,
