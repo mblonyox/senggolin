@@ -4,12 +4,34 @@
 
 import config from "./deno.json" assert { type: "json" };
 import * as $0 from "./routes/[slug].tsx";
-import * as $1 from "./routes/index.tsx";
+import * as $1 from "./routes/_app.tsx";
+import * as $2 from "./routes/index.tsx";
+import * as $3 from "./routes/studio/_middleware.ts";
+import * as $4 from "./routes/studio/admin/_middleware.ts";
+import * as $5 from "./routes/studio/admin/index.tsx";
+import * as $6 from "./routes/studio/callback.tsx";
+import * as $7 from "./routes/studio/index.ts";
+import * as $8 from "./routes/studio/login.tsx";
+import * as $9 from "./routes/studio/member/_middleware.ts";
+import * as $10 from "./routes/studio/member/index.tsx";
+import * as $11 from "./routes/studio/register.tsx";
+import * as $12 from "./routes/studio/reset-password.tsx";
 
 const manifest = {
   routes: {
     "./routes/[slug].tsx": $0,
-    "./routes/index.tsx": $1,
+    "./routes/_app.tsx": $1,
+    "./routes/index.tsx": $2,
+    "./routes/studio/_middleware.ts": $3,
+    "./routes/studio/admin/_middleware.ts": $4,
+    "./routes/studio/admin/index.tsx": $5,
+    "./routes/studio/callback.tsx": $6,
+    "./routes/studio/index.ts": $7,
+    "./routes/studio/login.tsx": $8,
+    "./routes/studio/member/_middleware.ts": $9,
+    "./routes/studio/member/index.tsx": $10,
+    "./routes/studio/register.tsx": $11,
+    "./routes/studio/reset-password.tsx": $12,
   },
   islands: {},
   baseUrl: import.meta.url,

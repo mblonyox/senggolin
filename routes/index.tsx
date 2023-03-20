@@ -1,21 +1,21 @@
 import { PageProps } from "$fresh/server.ts";
 import SeoTags from "@/components/seo_tags.tsx";
+import MainLayout from "@/components/main_layout.tsx";
 import { META_DESCRIPTION } from "@/utils/env.ts";
 
 export default function Home({ url }: PageProps) {
   return (
-    <>
+    <MainLayout>
       <SeoTags url={url} />
-      <div class="w-full max-w-screen-md mx-auto py-16">
-        <img
-          src="/logo.webp"
-          class="w-32 h-32 mx-auto"
-          alt="senggol.in logo"
-        />
-        <p class="my-8 w-1/2 mx-auto text-center">
-          {META_DESCRIPTION}
-        </p>
-      </div>
-    </>
+      <img
+        src="/logo.webp"
+        alt="senggol.in logo"
+        width={128}
+        height={128}
+      />
+      <p>
+        {META_DESCRIPTION}
+      </p>
+    </MainLayout>
   );
 }
