@@ -1,9 +1,11 @@
 import { MiddlewareHandlerContext } from "$fresh/server.ts";
-import { ContextState } from "@/utils/context_state.types.ts";
+import { SupabaseClient, User } from "@supabase/supabase-js";
 
 export async function setUser(
   _req: Request,
-  ctx: MiddlewareHandlerContext<ContextState>,
+  ctx: MiddlewareHandlerContext<
+    { supabaseClient?: SupabaseClient; user?: User }
+  >,
 ) {
   const sessionResponse = await ctx.state.supabaseClient?.auth.getSession();
   const user = sessionResponse?.data.session?.user;
@@ -13,7 +15,9 @@ export async function setUser(
 
 export function memberGuard(
   _req: Request,
-  ctx: MiddlewareHandlerContext<ContextState>,
+  ctx: MiddlewareHandlerContext<
+    { user?: User }
+  >,
 ) {
   if (ctx.state.user?.role !== "authenticated") {
     return new Response("Unauthorized access.", {
@@ -25,7 +29,9 @@ export function memberGuard(
 
 export function adminGuard(
   _req: Request,
-  ctx: MiddlewareHandlerContext<ContextState>,
+  ctx: MiddlewareHandlerContext<
+    { user?: User }
+  >,
 ) {
   if (ctx.state.user?.role !== "admin") {
     return new Response("Forbidden access.", {

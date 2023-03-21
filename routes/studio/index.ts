@@ -1,9 +1,9 @@
 import { Handler } from "$fresh/server.ts";
-import { ContextState } from "@/utils/context_state.types.ts";
+import { User } from "@supabase/supabase-js";
 
-export const handler: Handler<never, ContextState> = (req, ctx) => {
+export const handler: Handler<never, { user?: User }> = (req, ctx) => {
   if (ctx.state.user) {
-    return Response.redirect(new URL(req.url + "/my-page"), 302);
+    return Response.redirect(new URL(req.url + "/member"), 302);
   }
   return Response.redirect(new URL(req.url + "/login"), 302);
 };

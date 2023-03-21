@@ -1,5 +1,5 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { ContextState } from "@/utils/context_state.types.ts";
+import { SupabaseClient, User } from "@supabase/supabase-js";
 import MainLayout from "@/components/main_layout.tsx";
 import SeoTags from "@/components/seo_tags.tsx";
 
@@ -14,11 +14,11 @@ type Data = {
 
 export const handler: Handlers<
   Data,
-  ContextState
+  { supabaseClient?: SupabaseClient; user?: User }
 > = {
   GET: (req, ctx) => {
     if (ctx.state.user) {
-      return Response.redirect(new URL("my-page", req.url), 302);
+      return Response.redirect(new URL("member", req.url), 302);
     }
     return ctx.render({
       name: "",
