@@ -1,11 +1,11 @@
 import { Cookie, getCookies, setCookie } from "$std/http/cookie.ts";
 import { MiddlewareHandlerContext } from "$fresh/server.ts";
-import { SupabaseClient } from "@supabase/supabase-js";
 import { createServerSupabaseClient } from "@supabase/auth-helpers-shared";
+import { ContextState } from "@/utils/context_state.types.ts";
 
 export async function setSupabaseClient(
   req: Request,
-  ctx: MiddlewareHandlerContext<{ supabaseClient?: SupabaseClient }>,
+  ctx: MiddlewareHandlerContext<ContextState>,
 ) {
   const supabaseUrl = Deno.env.get("SUPABASE_URL");
   const supabaseKey = Deno.env.get("SUPABASE_KEY");
