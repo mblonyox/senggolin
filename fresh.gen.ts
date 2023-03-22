@@ -14,10 +14,12 @@ import * as $7 from "./routes/studio/change-password.tsx";
 import * as $8 from "./routes/studio/index.ts";
 import * as $9 from "./routes/studio/login.tsx";
 import * as $10 from "./routes/studio/logout.ts";
-import * as $11 from "./routes/studio/my-page/_middleware.ts";
-import * as $12 from "./routes/studio/my-page/index.tsx";
-import * as $13 from "./routes/studio/register.tsx";
-import * as $14 from "./routes/studio/reset-password.tsx";
+import * as $11 from "./routes/studio/my-page/[pageId].tsx";
+import * as $12 from "./routes/studio/my-page/_middleware.ts";
+import * as $13 from "./routes/studio/my-page/index.tsx";
+import * as $14 from "./routes/studio/my-page/new.tsx";
+import * as $15 from "./routes/studio/register.tsx";
+import * as $16 from "./routes/studio/reset-password.tsx";
 
 const manifest = {
   routes: {
@@ -32,10 +34,12 @@ const manifest = {
     "./routes/studio/index.ts": $8,
     "./routes/studio/login.tsx": $9,
     "./routes/studio/logout.ts": $10,
-    "./routes/studio/my-page/_middleware.ts": $11,
-    "./routes/studio/my-page/index.tsx": $12,
-    "./routes/studio/register.tsx": $13,
-    "./routes/studio/reset-password.tsx": $14,
+    "./routes/studio/my-page/[pageId].tsx": $11,
+    "./routes/studio/my-page/_middleware.ts": $12,
+    "./routes/studio/my-page/index.tsx": $13,
+    "./routes/studio/my-page/new.tsx": $14,
+    "./routes/studio/register.tsx": $15,
+    "./routes/studio/reset-password.tsx": $16,
   },
   islands: {},
   baseUrl: import.meta.url,

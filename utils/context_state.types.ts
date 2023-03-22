@@ -1,4 +1,4 @@
-import { SupabaseClient, User } from "@supabase/supabase-js";
+import { SupabaseClient as _SupabaseClient, User } from "@supabase/supabase-js";
 
 interface Database {
   public: {
@@ -119,7 +119,9 @@ interface Database {
   };
 }
 
+export type SupabaseClient = _SupabaseClient<Database>;
+
 export type ContextState = {
-  supabaseClient?: SupabaseClient<Database>;
+  supabaseClient?: SupabaseClient;
   user?: User;
 };
