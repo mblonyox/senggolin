@@ -1,5 +1,5 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { SupabaseClient, User } from "@supabase/supabase-js";
+import { ContextState } from "@/utils/context_state.types.ts";
 import MainLayout from "@/components/main_layout.tsx";
 import SeoTags from "@/components/seo_tags.tsx";
 
@@ -12,7 +12,7 @@ type Data = {
 
 export const handler: Handlers<
   Data,
-  { supabaseClient?: SupabaseClient; user?: User }
+  ContextState
 > = {
   GET: async (req, ctx) => {
     const searchParams = new URL(req.url).searchParams;

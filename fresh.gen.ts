@@ -14,8 +14,8 @@ import * as $7 from "./routes/studio/change-password.tsx";
 import * as $8 from "./routes/studio/index.ts";
 import * as $9 from "./routes/studio/login.tsx";
 import * as $10 from "./routes/studio/logout.ts";
-import * as $11 from "./routes/studio/member/_middleware.ts";
-import * as $12 from "./routes/studio/member/index.tsx";
+import * as $11 from "./routes/studio/my-page/_middleware.ts";
+import * as $12 from "./routes/studio/my-page/index.tsx";
 import * as $13 from "./routes/studio/register.tsx";
 import * as $14 from "./routes/studio/reset-password.tsx";
 
@@ -32,8 +32,8 @@ const manifest = {
     "./routes/studio/index.ts": $8,
     "./routes/studio/login.tsx": $9,
     "./routes/studio/logout.ts": $10,
-    "./routes/studio/member/_middleware.ts": $11,
-    "./routes/studio/member/index.tsx": $12,
+    "./routes/studio/my-page/_middleware.ts": $11,
+    "./routes/studio/my-page/index.tsx": $12,
     "./routes/studio/register.tsx": $13,
     "./routes/studio/reset-password.tsx": $14,
   },
