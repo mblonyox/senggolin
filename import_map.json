@@ -1,25 +1,26 @@
 {
   "imports": {
     "@/": "./",
-    "$std/": "https://deno.land/std@0.180.0/",
+    "$std/": "https://deno.land/std@0.181.0/",
     "$fresh/": "https://deno.land/x/fresh@1.1.4/",
-    "@preact/signals-core": "https://esm.sh/v111/@preact/signals-core@1.0.1",
-    "@preact/signals": "https://esm.sh/v111/*@preact/signals@1.0.4",
-    "@supabase/auth-helpers-shared": "https://esm.sh/v111/*@supabase/auth-helpers-shared@0.3.0",
-    "@supabase/supabase-js": "https://esm.sh/v111/*@supabase/supabase-js@2.11.0",
-    "preact-render-to-string": "https://esm.sh/v111/*preact-render-to-string@5.2.6",
-    "preact-render-to-string/": "https://esm.sh/v111/*preact-render-to-string@5.2.6/",
-    "preact": "https://esm.sh/v111/preact@10.11.3",
-    "preact/": "https://esm.sh/v111/preact@10.11.3/"
+    "@preact/signals-core": "https://esm.sh/v112/@preact/signals-core@1.0.1",
+    "@preact/signals": "https://esm.sh/v112/*@preact/signals@1.0.4",
+    "@supabase/auth-helpers-shared": "https://esm.sh/v112/*@supabase/auth-helpers-shared@0.3.0",
+    "@supabase/supabase-js": "https://esm.sh/v112/*@supabase/supabase-js@2.11.0",
+    "preact-render-to-string": "https://esm.sh/v112/*preact-render-to-string@5.2.6",
+    "preact-render-to-string/": "https://esm.sh/v112/*preact-render-to-string@5.2.6/",
+    "preact": "https://esm.sh/v112/preact@10.11.3",
+    "preact/": "https://esm.sh/v112/preact@10.11.3/"
   },
   "scopes": {
-    "https://esm.sh/v111/": {
-      "@supabase/functions-js": "https://esm.sh/v111/@supabase/functions-js@2.1.0",
-      "@supabase/gotrue-js": "https://esm.sh/v111/@supabase/gotrue-js@2.14.0",
-      "@supabase/postgrest-js": "https://esm.sh/v111/@supabase/postgrest-js@1.4.1",
-      "@supabase/realtime-js": "https://esm.sh/v111/@supabase/realtime-js@2.7.0",
-      "@supabase/storage-js": "https://esm.sh/v111/@supabase/storage-js@2.3.1",
-      "cross-fetch": "https://esm.sh/v111/cross-fetch@3.1.5"
+    "https://esm.sh/v112/": {
+      "@supabase/functions-js": "https://esm.sh/v112/@supabase/functions-js@2.1.0",
+      "@supabase/gotrue-js": "https://esm.sh/v112/@supabase/gotrue-js@2.14.0",
+      "@supabase/postgrest-js": "https://esm.sh/v112/@supabase/postgrest-js@1.4.1",
+      "@supabase/realtime-js": "https://esm.sh/v112/@supabase/realtime-js@2.7.0",
+      "@supabase/storage-js": "https://esm.sh/v112/@supabase/storage-js@2.3.1",
+      "cross-fetch": "https://esm.sh/v112/cross-fetch@3.1.5",
+      "pretty-format": "https://esm.sh/v112/pretty-format@3.8.0"
     }
   }
 }
