@@ -1,6 +1,6 @@
 import { MiddlewareHandler } from "$fresh/server.ts";
-import { setUser } from "@/middlewares/auth.ts";
+import { setSupabaseClient } from "@/middlewares/supabase.ts";
 
 export const handler: MiddlewareHandler[] = [
-  setUser,
+  setSupabaseClient,
 ];

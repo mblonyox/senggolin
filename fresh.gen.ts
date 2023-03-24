@@ -5,41 +5,43 @@
 import config from "./deno.json" assert { type: "json" };
 import * as $0 from "./routes/[slug].tsx";
 import * as $1 from "./routes/_app.tsx";
-import * as $2 from "./routes/index.tsx";
-import * as $3 from "./routes/studio/_middleware.ts";
-import * as $4 from "./routes/studio/admin/_middleware.ts";
-import * as $5 from "./routes/studio/admin/index.tsx";
-import * as $6 from "./routes/studio/callback.tsx";
-import * as $7 from "./routes/studio/change-password.tsx";
-import * as $8 from "./routes/studio/index.ts";
-import * as $9 from "./routes/studio/login.tsx";
-import * as $10 from "./routes/studio/logout.ts";
-import * as $11 from "./routes/studio/my-page/[pageId].tsx";
-import * as $12 from "./routes/studio/my-page/_middleware.ts";
-import * as $13 from "./routes/studio/my-page/index.tsx";
-import * as $14 from "./routes/studio/my-page/new.tsx";
-import * as $15 from "./routes/studio/register.tsx";
-import * as $16 from "./routes/studio/reset-password.tsx";
+import * as $2 from "./routes/_middleware.ts";
+import * as $3 from "./routes/index.tsx";
+import * as $4 from "./routes/studio/_middleware.ts";
+import * as $5 from "./routes/studio/admin/_middleware.ts";
+import * as $6 from "./routes/studio/admin/index.tsx";
+import * as $7 from "./routes/studio/callback.tsx";
+import * as $8 from "./routes/studio/change-password.tsx";
+import * as $9 from "./routes/studio/index.ts";
+import * as $10 from "./routes/studio/login.tsx";
+import * as $11 from "./routes/studio/logout.ts";
+import * as $12 from "./routes/studio/my-page/[pageId].tsx";
+import * as $13 from "./routes/studio/my-page/_middleware.ts";
+import * as $14 from "./routes/studio/my-page/index.tsx";
+import * as $15 from "./routes/studio/my-page/new.tsx";
+import * as $16 from "./routes/studio/register.tsx";
+import * as $17 from "./routes/studio/reset-password.tsx";
 
 const manifest = {
   routes: {
     "./routes/[slug].tsx": $0,
     "./routes/_app.tsx": $1,
-    "./routes/index.tsx": $2,
-    "./routes/studio/_middleware.ts": $3,
-    "./routes/studio/admin/_middleware.ts": $4,
-    "./routes/studio/admin/index.tsx": $5,
-    "./routes/studio/callback.tsx": $6,
-    "./routes/studio/change-password.tsx": $7,
-    "./routes/studio/index.ts": $8,
-    "./routes/studio/login.tsx": $9,
-    "./routes/studio/logout.ts": $10,
-    "./routes/studio/my-page/[pageId].tsx": $11,
-    "./routes/studio/my-page/_middleware.ts": $12,
-    "./routes/studio/my-page/index.tsx": $13,
-    "./routes/studio/my-page/new.tsx": $14,
-    "./routes/studio/register.tsx": $15,
-    "./routes/studio/reset-password.tsx": $16,
+    "./routes/_middleware.ts": $2,
+    "./routes/index.tsx": $3,
+    "./routes/studio/_middleware.ts": $4,
+    "./routes/studio/admin/_middleware.ts": $5,
+    "./routes/studio/admin/index.tsx": $6,
+    "./routes/studio/callback.tsx": $7,
+    "./routes/studio/change-password.tsx": $8,
+    "./routes/studio/index.ts": $9,
+    "./routes/studio/login.tsx": $10,
+    "./routes/studio/logout.ts": $11,
+    "./routes/studio/my-page/[pageId].tsx": $12,
+    "./routes/studio/my-page/_middleware.ts": $13,
+    "./routes/studio/my-page/index.tsx": $14,
+    "./routes/studio/my-page/new.tsx": $15,
+    "./routes/studio/register.tsx": $16,
+    "./routes/studio/reset-password.tsx": $17,
   },
   islands: {},
   baseUrl: import.meta.url,
