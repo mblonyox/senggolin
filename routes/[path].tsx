@@ -7,7 +7,6 @@ type Data = {
 };
 
 export const handler: Handler<Data> = async (_req, ctx) => {
-  console.log(ctx.params);
   const path = ctx.params.path;
   const link = await getLinkByPath(path);
   if (link === null) return ctx.renderNotFound();

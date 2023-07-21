@@ -50,7 +50,7 @@ export const handler: Handlers<Data> = {
     };
     const [passes, errors] = await validate(data.form, {
       url: [required, isValidUrl],
-      path: [onlyAlphaNumeric],
+      path: [required, onlyAlphaNumeric],
     }, {
       messages: {
         "url.required": "URL wajib diisi.",
