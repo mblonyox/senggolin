@@ -1,13 +1,21 @@
+import { Signal } from "@preact/signals";
+
 type Props = {
-  links: {
+  links: Signal<{
     path: string;
     url: string;
     createdAt: Date;
     clicks: number;
-  }[];
+  }[]>;
 };
 
 export default function LinksTable({ links }: Props) {
+  const handleDelete = async (path: string) => {
+    if (!window.confirm("Anda yakin menghapus tautan?")) return;
+    const resp = await fetch(`${path}`, { method: "DELETE" });
+    if (resp.ok) links.value = links.value.filter((l) => l.path !== path);
+  };
+
   return (
     <table>
       <thead>
@@ -16,10 +24,11 @@ export default function LinksTable({ links }: Props) {
           <th scope="col">Tautan</th>
           <th scope="col">Dibuat pada</th>
           <th scope="col">Jumlah klik</th>
+          <th scope="col">Hapus</th>
         </tr>
       </thead>
       <tbody>
-        {links.map(({ url, path, createdAt, clicks }, index) => (
+        {links.value.map(({ url, path, createdAt, clicks }, index) => (
           <tr>
             <th scope="row">{index + 1}</th>
             <td>
@@ -38,6 +47,16 @@ export default function LinksTable({ links }: Props) {
             </td>
             <td>
               {clicks}
+            </td>
+            <td>
+              <button onClick={() => handleDelete(path)}>
+                <img
+                  src="/icons/delete.svg"
+                  alt="Delete"
+                  width={24}
+                  height={24}
+                />
+              </button>
             </td>
           </tr>
         ))}

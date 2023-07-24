@@ -1,7 +1,8 @@
 import { Head } from "$fresh/runtime.ts";
 import { Handlers, PageProps } from "$fresh/server.ts";
+import { useSignal } from "@preact/signals";
 import Form from "../components/form.tsx";
-import LinksTable from "../components/links-table.tsx";
+import LinksTable from "../islands/links-table.tsx";
 import { getLinksBySessionId, insertLink } from "../utils/kv.ts";
 import { isValidUrl, onlyAlphaNumeric } from "../utils/validations.ts";
 import { firstMessages, required, validate } from "validasaur";
@@ -26,7 +27,7 @@ type Data = {
 };
 
 export const handler: Handlers<Data> = {
-  GET: async (req, ctx) => {
+  GET: async (_req, ctx) => {
     const sessionId = ctx.state.sessionId as string;
     const links = await getLinksBySessionId(sessionId);
     return ctx.render({
@@ -74,11 +75,15 @@ export const handler: Handlers<Data> = {
     links.push(link);
     data.form.url = "";
     data.form.path = "";
-    return ctx.render(data, { status: 201 });
+    return ctx.render(data, {
+      status: 201,
+      headers: { "Content-Location": `/${link.path}` },
+    });
   },
 };
 
 export default function Home({ data: { form, links } }: PageProps<Data>) {
+  const linksSignal = useSignal(links);
   return (
     <>
       <Head>
@@ -86,7 +91,7 @@ export default function Home({ data: { form, links } }: PageProps<Data>) {
       </Head>
       <Form {...form} />
       <hr />
-      <LinksTable links={links} />
+      <LinksTable links={linksSignal} />
     </>
   );
 }
